@@ -19,18 +19,20 @@ namespace InsuranceAPI.Controllers
         {
             _premiumCalculator = premium;
         }
-        // GET: api/<InsuranceController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        // GET: with params
+        [HttpGet("/{age}/{rating}/{coverAmount}")]
+        public async Task<string> Get(int age, string rating, double coverAmount)
         {
-            return new string[] { "value1", "value2" };
+            var calculatedPremium = await _premiumCalculator.CalculatePremium(rating, coverAmount, age);
+            return Convert.ToString(calculatedPremium);
         }
 
-        // GET api/<InsuranceController>/5
+       
         [HttpGet]
-        public IEnumerable<Occupations> GetOccupations()
+        public async Task<List<Occupations>> GetOccupations()
         {
-            return null;
+            var listOfOccupations = await _premiumCalculator.RetrieveOccupations();
+            return listOfOccupations;
         }
     }
 }

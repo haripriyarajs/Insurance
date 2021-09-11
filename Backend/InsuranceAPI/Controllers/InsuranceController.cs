@@ -1,4 +1,5 @@
-﻿using InsuranceAPI.Model;
+﻿using InsuranceAPI.Helpers;
+using InsuranceAPI.Model;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,11 @@ namespace InsuranceAPI.Controllers
     [ApiController]
     public class InsuranceController : ControllerBase
     {
+        private readonly IPremiumCalculator _premiumCalculator;
+        public InsuranceController(IPremiumCalculator premium)
+        {
+            _premiumCalculator = premium;
+        }
         // GET: api/<InsuranceController>
         [HttpGet]
         public IEnumerable<string> Get()

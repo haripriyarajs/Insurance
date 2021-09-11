@@ -8,7 +8,7 @@ namespace InsuranceAPI.Helpers
 {
     public interface IPremiumCalculator
     {
-        Task<List<Occupations>> RetrieveCalculations();
+        Task<List<Occupations>> RetrieveOccupations();
         Task<Double> CalculatePremium(string rating, double coverAmount, int age);
     }
 

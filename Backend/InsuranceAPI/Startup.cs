@@ -1,3 +1,4 @@
+using InsuranceAPI.Helpers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +32,7 @@ namespace InsuranceAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "InsuranceAPI", Version = "v1" });
             });
+            services.AddScoped<IPremiumCalculator, PremiumCalculator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

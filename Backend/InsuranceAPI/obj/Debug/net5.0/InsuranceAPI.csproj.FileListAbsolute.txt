@@ -27,3 +27,5 @@ D:\Insurance\Backend\InsuranceAPI\obj\Debug\net5.0\InsuranceAPI.dll
 D:\Insurance\Backend\InsuranceAPI\obj\Debug\net5.0\ref\InsuranceAPI.dll
 D:\Insurance\Backend\InsuranceAPI\obj\Debug\net5.0\InsuranceAPI.pdb
 D:\Insurance\Backend\InsuranceAPI\obj\Debug\net5.0\InsuranceAPI.genruntimeconfig.cache
+D:\Insurance\Backend\InsuranceAPI\bin\Debug\net5.0\OccupationRating.json
+D:\Insurance\Backend\InsuranceAPI\bin\Debug\net5.0\Occupations.json

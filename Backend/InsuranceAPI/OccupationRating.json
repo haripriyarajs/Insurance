@@ -1,0 +1,24 @@
+{
+  "Items": [
+    {
+      "RatingId": 1,
+      "RatingName": "Professional",
+      "RatingFactor": 1.0
+    },
+    {
+      "RatingId": 2,
+      "RatingName": "White Collar",
+      "RatingFactor": 1.25
+    },
+    {
+      "RatingId": 3,
+      "RatingName": "Light Manual",
+      "RatingFactor": 1.50
+    },
+    {
+      "RatingId": 4,
+      "RatingName": "Heavy Manual",
+      "RatingFactor": 1.75
+    }
+  ]
+}

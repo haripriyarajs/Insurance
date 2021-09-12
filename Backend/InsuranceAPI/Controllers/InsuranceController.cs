@@ -1,5 +1,6 @@
 ﻿using InsuranceAPI.Helpers;
 using InsuranceAPI.Model;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -27,12 +28,24 @@ namespace InsuranceAPI.Controllers
             return Convert.ToString(calculatedPremium);
         }
 
-       
-        [HttpGet]
-        public async Task<List<Occupations>> GetOccupations()
+
+        [HttpGet("GetOccupations")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<List<Occupations>>> GetOccupations()
         {
-            var listOfOccupations = await _premiumCalculator.RetrieveOccupations();
-            return listOfOccupations;
+            List<Occupations> listOfOccupations = new List<Occupations>();
+            try
+            {
+                listOfOccupations = await _premiumCalculator.RetrieveOccupations();
+                if (!listOfOccupations.Any())
+                    return NotFound();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+            return Ok(listOfOccupations);
         }
     }
 }

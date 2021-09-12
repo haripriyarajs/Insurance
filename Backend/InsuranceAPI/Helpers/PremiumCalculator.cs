@@ -20,6 +20,7 @@ namespace InsuranceAPI.Helpers
             var filePath = "/Occupations.json";
             List<Occupations> occupations = new List<Occupations>();
             var jsonString = ReadJsonFile(filePath);
+            await Task.Delay(100);
             if (!String.IsNullOrEmpty(jsonString))
             {
                 var occupationList= JsonSerializer.Deserialize<List<Occupations>>(jsonString);

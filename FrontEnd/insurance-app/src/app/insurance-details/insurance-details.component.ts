@@ -40,8 +40,37 @@ export class InsuranceDetailsComponent implements OnInit {
   occupationChange(value: any) {
     this.occupationRating = value;
     this.showClear = true;
-  //  this.calculatePremium();
+   this.calculatePremium();
     console.warn(value);
+  }
+
+  sumInsuredChange(value: any) {
+    console.log(value.value);
+    this.sumInsured = value.value;
+    this.showClear = true;
+    this.calculatePremium();
+  }
+
+  calculatePremium() {
+    if (this.occupationRating != undefined && this.age > 0 && this.sumInsured > 0) {
+      this.oService.calculatePremium(this.age,this.occupationRating,this.sumInsured).subscribe((result) => {
+        console.log(result);
+        this.monthlyPremium =Number(result).toPrecision(4).toString() +" AUD";
+        console.log(this.occupations);
+      })
+      
+    }
+  }
+
+  clearButton(){
+    this.showClear = false;
+    this.dateOfBirth = ' ';
+    this.age =0;
+    this.sumInsured = 0;
+    this.defaultOccupation = '';
+    if(this.nameChange != undefined){
+      this.nameControl.target.value = ''
+     }
   }
 
   nameChange(event: any){
@@ -49,10 +78,27 @@ export class InsuranceDetailsComponent implements OnInit {
     this.showClear = true;
     console.warn(event.target.value);
   }
+
+  calculateAge(event : any){
+    const convertAge = new Date(this.dateOfBirth);
+    const timeDiff = Math.abs(Date.now() - convertAge.getTime());
+    this.age = Math.floor((timeDiff / (1000 * 3600 * 24))/365);
+    this.calculatePremium();
+  }
+
   selected = new FormControl('', [
     Validators.required
   ]);
 
   matcher = new MyErrorStateMatcher();
+
+  formatSumInsuredSliderLabel(value: number) {
+    return value + "k";
+  }
+
+  formatAgeSliderLabel(value: number) {
+    return value + " Y";
+  }
+
 
 }

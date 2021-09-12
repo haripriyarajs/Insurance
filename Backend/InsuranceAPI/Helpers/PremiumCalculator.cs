@@ -23,10 +23,10 @@ namespace InsuranceAPI.Helpers
             await Task.Delay(100);
             if (!String.IsNullOrEmpty(jsonString))
             {
-                var occupationList= JsonSerializer.Deserialize<List<Occupations>>(jsonString);
-                if(occupationList != null && occupationList.Any())
+                var occupationList= JsonSerializer.Deserialize<OccupationList>(jsonString);
+                if(occupationList != null && occupationList.Items != null && occupationList.Items.Any())
                 {
-                    occupations = occupationList;
+                    occupations = occupationList.Items;
                 }
             }
             return occupations;

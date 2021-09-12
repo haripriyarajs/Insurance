@@ -1,32 +1,34 @@
-[
-  {
-    "id": 1,
-    "name": "Cleaner",
-    "rating": "LIGHT_MANUAL"
-  },
-  {
-    "id": 2,
-    "name": "Doctor",
-    "rating": "PROFESSIONAL"
-  },
-  {
-    "id": 3,
-    "name": "Author",
-    "rating": "WHITE_COLLAR"
-  },
-  {
-    "id": 4,
-    "name": "Farmer",
-    "rating": "HEAVY_MANUAL"
-  },
-  {
-    "id": 5,
-    "name": "Mechanic",
-    "rating": "HEAVY_MANUAL"
-  },
-  {
-    "id": 6,
-    "name": "Florist",
-    "rating": "LIGHT_MANUAL"
-  }
-]
+{
+  Items: [
+    {
+      "id": 1,
+      "name": "Cleaner",
+      "rating": "LIGHT_MANUAL"
+    },
+    {
+      "id": 2,
+      "name": "Doctor",
+      "rating": "PROFESSIONAL"
+    },
+    {
+      "id": 3,
+      "name": "Author",
+      "rating": "WHITE_COLLAR"
+    },
+    {
+      "id": 4,
+      "name": "Farmer",
+      "rating": "HEAVY_MANUAL"
+    },
+    {
+      "id": 5,
+      "name": "Mechanic",
+      "rating": "HEAVY_MANUAL"
+    },
+    {
+      "id": 6,
+      "name": "Florist",
+      "rating": "LIGHT_MANUAL"
+    }
+  ]
+}

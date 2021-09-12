@@ -5,6 +5,10 @@ using System.Threading.Tasks;
 
 namespace InsuranceAPI.Model
 {
+    public class OccupationList
+    {
+        public List<Occupations> Items { get; set; }
+    }
     public class Occupations
     {
         public int Id { get; set; }

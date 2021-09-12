@@ -10,14 +10,14 @@
 
         <th align="left">
             Sum Insured(AUD) : <mat-slider thumbLabel tickInterval="10" step="0.1" min="0" max="100"  [(ngModel)]="sumInsured"
-                (change)="sumInsuredChange($event)"  [displayWith]="formatSumInsuredSliderLabel" ></mat-slider> {{sumInsured + "k INR"}}
+                (change)="sumInsuredChange($event)"  [displayWith]="formatSumInsuredSliderLabel" ></mat-slider> {{sumInsured + "k AUD"}}
         </th>
         
    </div>
     <div class="col">
 
         <th align="left">
-            Age (Years) :  {{age+ "Yrs"}}
+            Age (Years) :  {{age+ " Yrs"}}
         </th>
         
    </div>
@@ -51,6 +51,6 @@
       <th> Monthly Premium : <b>{{monthlyPremium}} </b> </th>
    </div>
     <div class="col text-center">
-        <button (click)="clearButton()" class="btn btn-info btn-lg btn-block"> Clear </button>
+        <button (click)="clearButton()" class="btn btn-info btn-lg btn-block" *ngIf="showClear"> Clear </button>
    </div>
 </div>

@@ -45,17 +45,22 @@ namespace InsuranceAPI
             .AllowAnyMethod()
             .AllowAnyHeader());
             // app.UseHttpsRedirection();
+            //if (env.IsDevelopment())
+            //{
+            //    app.UseDeveloperExceptionPage();
+            //    app.UseSwagger();
+            //    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "InsuranceAPI v1"));
+            //}
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseExceptionHandler("/error-local-development");
+                //app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "InsuranceAPI v1"));
             }
-            if (env.IsDevelopment())
+            else
             {
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "InsuranceAPI v1"));
+                app.UseExceptionHandler("/error");
             }
 
             app.UseRouting();

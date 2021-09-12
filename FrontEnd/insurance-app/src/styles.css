@@ -1,9 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+You can add global styles to this file, and also import other style files
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.example-form {
+ .example-form {
     min-width: 150px;
     max-width: 500px;
     width: 100%;
@@ -11,4 +11,39 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   
   .example-full-width {
     width: 100%;
+  }
+
+  .btn-block{
+    width: 50% !important;
+ 
+    margin:24px auto;
+  }
+
+  .table{
+    width:100%;
+    display: inline-block;
+    position: relative;
+    box-shadow: 5px 10px 18px #888888;
+  } 
+  .table .col{
+    width:100%;
+    display:inline-block;
+  }
+  .mat-form-field-appearance-fill .mat-form-field-flex{
+      background-color: white;
+  }
+  .table .col th{
+      width:100%;
+      display: inline-block;
+      border:0px;
+  } 
+
+  .mat-form-field{
+    width:100%;
+  } 
+
+  .mat-slider-thumb-label{
+      width: 38px !important;
+      height: 38px !important;
+      background-color: gray!important;
   }

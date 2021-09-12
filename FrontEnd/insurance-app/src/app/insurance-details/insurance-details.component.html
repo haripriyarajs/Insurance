@@ -1,27 +1,27 @@
-<table border="1">
-    <tr>
+<div class="table">
+    <div class="col">
 
         <th align="left">
             <app-input-error (change)="nameChange($event)"  ></app-input-error>
         </th>
         
-    </tr>
-    <tr>
+   </div>
+    <div class="col">
 
         <th align="left">
             Sum Insured(AUD) : <mat-slider thumbLabel tickInterval="10" step="0.1" min="0" max="100"  [(ngModel)]="sumInsured"
                 (change)="sumInsuredChange($event)"  [displayWith]="formatSumInsuredSliderLabel" ></mat-slider> {{sumInsured + "k INR"}}
         </th>
         
-    </tr>
-    <tr>
+   </div>
+    <div class="col">
 
         <th align="left">
             Age (Years) :  {{age+ "Yrs"}}
         </th>
         
-    </tr>
-    <tr>
+   </div>
+    <div class="col">
 
         <th align="left">
               <mat-form-field>
@@ -31,24 +31,9 @@
               </mat-form-field>
         </th>
         
-    </tr>
-    <!-- <tr>
-
-        <th align="left"> 
-            <mat-form-field appearance="fill">
-                <mat-label>Occupation</mat-label>
-                <mat-select  required #h (selectionChange)=occupationChange(h.value)>
-                    <mat-option>--</mat-option>
-                  <mat-option *ngFor="let occupation of occupations" [value]="occupation.rating">
-                    {{occupation.name}}
-                  </mat-option>
-                </mat-select>
-              
-            </mat-form-field>
-        </th>
-        <td>Material Select Without Validation</td>
-    </tr> -->
-    <tr>
+   </div>
+    
+    <div class="col">
         <th align="left">
             <mat-form-field appearance="fill">
                 <mat-label>Occupation</mat-label>
@@ -61,14 +46,11 @@
                 <mat-error *ngIf="selected.hasError('required')">You must select a valid occupation</mat-error>
               </mat-form-field>
         </th>
-       
-    </tr>
-    <tr >
-
-        <th colspan="2">Monthly Premium {{monthlyPremium}}</th>
-    </tr>
-    <tr >
-
-        <th colspan="2"> <button (click)="clearButton()"> Clear </button></th>
-    </tr>
-</table>
+   </div>
+    <div class="col" >
+      <th> Monthly Premium : <b>{{monthlyPremium}} </b> </th>
+   </div>
+    <div class="col text-center">
+        <button (click)="clearButton()" class="btn btn-info btn-lg btn-block"> Clear </button>
+   </div>
+</div>

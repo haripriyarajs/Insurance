@@ -2,22 +2,22 @@
   "Items": [
     {
       "RatingId": 1,
-      "RatingName": "Professional",
+      "RatingName": "PROFESSIONAL",
       "RatingFactor": 1.0
     },
     {
       "RatingId": 2,
-      "RatingName": "White Collar",
+      "RatingName": "WHITE_COLLAR",
       "RatingFactor": 1.25
     },
     {
       "RatingId": 3,
-      "RatingName": "Light Manual",
+      "RatingName": "LIGHT_MANUAL",
       "RatingFactor": 1.50
     },
     {
       "RatingId": 4,
-      "RatingName": "Heavy Manual",
+      "RatingName": "HEAVY_MANUAL",
       "RatingFactor": 1.75
     }
   ]
